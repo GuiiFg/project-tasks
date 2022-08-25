@@ -1,0 +1,40 @@
+.task-done{
+    text-decoration: line-through;
+}
+
+.task-item-desc{
+    flex-grow: 1;
+}
+
+.btn-remover{
+    height: 30px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #ff0077;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+.btn-alterar{
+    height: 30px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #0077ff;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+.btn-alterar:hover{
+    opacity: 0.9;
+}
+.btn-remover:hover{
+    opacity: 0.9;
+}

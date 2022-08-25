@@ -7,6 +7,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { TaskListComponent } from './pages/tasks/task-list/task-list.component';
 import { TaskListItemComponent } from './pages/tasks/task-list-item/task-list-item.component';
 import { TaskListFormComponent } from './pages/tasks/task-list-form/task-list-form.component';
+import { NavBarComponent } from './pages/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { TaskListFormComponent } from './pages/tasks/task-list-form/task-list-fo
     LoginComponent,
     TaskListComponent,
     TaskListItemComponent,
-    TaskListFormComponent
+    TaskListFormComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,

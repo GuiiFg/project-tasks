@@ -1,0 +1,29 @@
+
+
+a{
+    color:white;
+    text-decoration: none;
+}
+
+h1{
+    margin: 0px;
+}
+
+.div-nav-container{
+    height: 60px;
+    background-image: linear-gradient(
+        to bottom right,
+        #0a7ce7,
+        #19e4d3);
+    margin: 0px;
+}
+
+.div-content{
+    display: flex;
+    align-items: center;
+    height: inherit;
+    width: inherit;
+    color: white;
+    margin-left: 20px;
+    margin-right: 20px;
+}

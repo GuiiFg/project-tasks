@@ -1,7 +1,7 @@
-import { Task } from './task';
+import { TaskModel } from './task-model';
 
 describe('Task', () => {
   it('should create an instance', () => {
-    expect(new Task()).toBeTruthy();
+    expect(new TaskModel()).toBeTruthy();
   });
 });

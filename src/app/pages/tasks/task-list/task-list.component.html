@@ -1,1 +1,15 @@
-<p>task-list works!</p>
+<app-nav-bar></app-nav-bar>
+
+<div class="div-tasklist-container">
+    <h2>Tarefas</h2>
+    <hr>
+    <button class="btn-newtask" [routerLink]="['/new']">Nova Tarefa</button>
+
+    <section>
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let task of tasklist">
+                <app-task-list-item [task]="task" class="list-item"></app-task-list-item>
+            </li>
+        </ul>
+    </section>
+</div>

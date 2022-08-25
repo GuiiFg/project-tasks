@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { TaskModel } from '../shared/task-model';
 
 @Component({
   selector: 'app-task-list-item',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./task-list-item.component.css']
 })
 export class TaskListItemComponent implements OnInit {
+  @Input()
+  task!: TaskModel;
 
   constructor() { }
 
