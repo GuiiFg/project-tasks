@@ -44,3 +44,11 @@ h2{
     align-items: center;
     background-color: #DEDEDE;
 }
+
+.div-alert-warning{
+    margin-top: 10px;
+    padding:20px;
+    background-color: #eceba1;
+    border-radius: 5px;
+    font-weight: bold;
+}

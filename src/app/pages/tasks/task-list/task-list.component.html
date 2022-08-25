@@ -6,6 +6,9 @@
     <button class="btn-newtask" [routerLink]="['/new']">Nova Tarefa</button>
 
     <section>
+        <div *ngIf="tasklist.length == 0" class="div-alert-warning">
+            Nenhuma tarefa criada!
+        </div>
         <ul class="list-group">
             <li class="list-group-item" *ngFor="let task of tasklist">
                 <app-task-list-item [task]="task" class="list-item"></app-task-list-item>

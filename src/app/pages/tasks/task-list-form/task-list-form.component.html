@@ -1,2 +1,20 @@
 <app-nav-bar></app-nav-bar>
-<p>task-list-form works!</p>
+
+<div class="task-form-container">
+    <h2>{{ title }}</h2>
+    <hr>
+    
+    <section id="form">
+        <form (ngSubmit)="onSubmit()" #formTask="ngForm">
+            <div>
+                <label>Descrição</label>
+                <br>
+                <textarea [(ngModel)]="task.description" name="description" rows="5"></textarea>
+            </div>
+            <div>
+                <button type="submit">Salvar</button>
+                <button [routerLink]="['/']">Cancelar</button>
+            </div>
+        </form>
+    </section>
+</div>

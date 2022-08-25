@@ -1,11 +1,11 @@
 <div>
-    <input type="checkbox">
+    <input type="checkbox" class="ckbox-done">
 </div>
 <div [innerHTML]="task.description" class="task-item-desc"
     [ngClass]="task.done ? 'task-done' : ''">
 </div>
 <div>
-    <button class="btn-alterar" [routerLink]="['/edit', 'task.id']">Alterar</button>
+    <button class="btn-alterar" [routerLink]="['/edit', task.id]">Alterar</button>
 </div>
 <div>
     <button class="btn-remover" >Excluir</button>

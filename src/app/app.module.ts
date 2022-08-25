@@ -8,6 +8,7 @@ import { TaskListComponent } from './pages/tasks/task-list/task-list.component';
 import { TaskListItemComponent } from './pages/tasks/task-list-item/task-list-item.component';
 import { TaskListFormComponent } from './pages/tasks/task-list-form/task-list-form.component';
 import { NavBarComponent } from './pages/nav-bar/nav-bar.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NavBarComponent } from './pages/nav-bar/nav-bar.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

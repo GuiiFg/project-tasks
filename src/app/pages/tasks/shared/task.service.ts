@@ -21,4 +21,33 @@ export class TaskService {
   getAll(){
     return this.tasks
   }
+
+  getById(id: number){
+    const task = this.tasks.find((value) => value.id == id);
+    return task;
+  }
+
+  saveTask(task: TaskModel){
+    if(task.id){
+      const taskToUpdate = this.getById(task.id);
+      if(taskToUpdate != undefined){
+        taskToUpdate.description = task.description;
+        taskToUpdate.done = task.done;
+      }
+    }else{
+      task.done = false;
+      if(this.tasks.length != 0){
+        const lastId = this.tasks[this.tasks.length - 1].id
+        task.id = lastId + 1;
+      }else{
+        task.id = 1
+      }
+      this.tasks.push(task);
+    }
+  }
+
+  deleteTask(id: number){
+    const taskIndex = this.tasks.findIndex((value) => value.id == id);
+    this.tasks.splice(taskIndex, 1);
+  }
 }
