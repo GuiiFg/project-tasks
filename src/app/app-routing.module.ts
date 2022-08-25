@@ -1,12 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './pages/login/login.component';
 import { AuthGuard } from './helpers/auth.guard';
+import { TaskListComponent } from './pages/tasks/task-list/task-list.component';
+import { TaskListFormComponent } from './pages/tasks/task-list-form/task-list-form.component';
+
 
 const routes: Routes = [
-  { path: '', component: AppComponent, canActivate: [AuthGuard] },
+  { path: '', component: TaskListComponent, canActivate: [AuthGuard] },
+  { path: 'new', component: TaskListFormComponent, canActivate: [AuthGuard] },
+  { path: 'edit/:id', component: TaskListFormComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
 
   { path: '**', redirectTo: '' }
