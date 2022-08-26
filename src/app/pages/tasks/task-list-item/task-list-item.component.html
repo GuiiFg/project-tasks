@@ -6,5 +6,5 @@
     <button class="btn-alterar" [routerLink]="['/edit', task.id]">Alterar</button>
 </div>
 <div>
-    <button class="btn-remover" >Excluir</button>
+    <button class="btn-remover" (click)="removeItem()">Excluir</button>
 </div>

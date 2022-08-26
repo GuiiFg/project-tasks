@@ -9,6 +9,9 @@ import { TaskListItemComponent } from './pages/tasks/task-list-item/task-list-it
 import { TaskListFormComponent } from './pages/tasks/task-list-form/task-list-form.component';
 import { NavBarComponent } from './pages/nav-bar/nav-bar.component';
 import { FormsModule } from '@angular/forms';
+import { CreateAccontComponent } from './pages/create-accont/create-accont.component';
+import { AuthService } from './helpers/auth.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,14 +20,16 @@ import { FormsModule } from '@angular/forms';
     TaskListComponent,
     TaskListItemComponent,
     TaskListFormComponent,
-    NavBarComponent
+    NavBarComponent,
+    CreateAccontComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

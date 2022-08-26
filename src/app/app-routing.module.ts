@@ -5,6 +5,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { AuthGuard } from './helpers/auth.guard';
 import { TaskListComponent } from './pages/tasks/task-list/task-list.component';
 import { TaskListFormComponent } from './pages/tasks/task-list-form/task-list-form.component';
+import { CreateAccontComponent } from './pages/create-accont/create-accont.component';
 
 
 const routes: Routes = [
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'new', component: TaskListFormComponent, canActivate: [AuthGuard] },
   { path: 'edit/:id', component: TaskListFormComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
+  { path: 'register', component: CreateAccontComponent },
 
   { path: '**', redirectTo: '' }
 ];
