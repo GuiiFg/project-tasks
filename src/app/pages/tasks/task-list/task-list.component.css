@@ -4,6 +4,10 @@ h2{
     margin-top: 20px;
 }
 
+button{
+    font-family: Mali;
+}
+
 .btn-newtask{
     height: 30px;
     color: white;
@@ -22,6 +26,17 @@ h2{
 
 .div-tasklist-container{
     margin: 20px;
+    display: flex;
+    font-family: Mali;
+}
+
+.img-content{
+    width: 50%;
+}
+
+.tasklist-content{
+    width: 50%;
+    padding-right: 20px;
 }
 
 .list-group{
@@ -33,6 +48,9 @@ h2{
 
 .list-group-item{
     list-style-type: none;
+    margin: 0px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .list-item{

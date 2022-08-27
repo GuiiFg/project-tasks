@@ -1,15 +1,43 @@
+
 <div class="login-container">
-    <div class="div-form">
-        <form (ngSubmit)="onSubmit()" #formLogin="ngForm">
-            <h1>Login</h1>
-            <p class="input-title">Email</p>
-            <input type="email" placeholder="email" [(ngModel)]="user.email" name="email">
-            <p class="input-title">Senha</p>
-            <input type="password" placeholder="senha" [(ngModel)]="user.senha"  name="senha">
-            <br>
-            <br>
-            <button type="submit">Entrar</button>
-            <button [routerLink]="['/register']">Cadatrar-se</button>
-        </form>
-    </div>
+    <section class="div-content">
+        <div class="section-content-img">
+            <img src="./assets/login/Computer login-bro.svg">
+        </div>
+        <div class="section-content-form">
+            <form (ngSubmit)="onSubmit()" #formLogin="ngForm">
+                <h1>My Tasks</h1>
+                <h3>Login</h3>
+                <p class="input-title">Email</p>
+                <input type="email" placeholder="email" [(ngModel)]="user.email" name="email">
+                <p class="input-title">Senha</p>
+                <input type="password" placeholder="senha" [(ngModel)]="user.senha"  name="senha">
+                <br>
+                <br>
+                <button type="submit">Entrar</button>
+                <button [routerLink]="['/register']">Cadatrar-se</button>
+            </form>
+        </div>
+    </section>
 </div>
+
+
+<!--
+<div class="login-container">
+    <div class="div-content">
+        <img src="./assets/login/Computer login-bro.svg">
+        <div class="div-form">
+            <form (ngSubmit)="onSubmit()" #formLogin="ngForm">
+                <h1>Login</h1>
+                <p class="input-title">Email</p>
+                <input type="email" placeholder="email" [(ngModel)]="user.email" name="email">
+                <p class="input-title">Senha</p>
+                <input type="password" placeholder="senha" [(ngModel)]="user.senha"  name="senha">
+                <br>
+                <br>
+                <button type="submit">Entrar</button>
+                <button [routerLink]="['/register']">Cadatrar-se</button>
+            </form>
+        </div>
+    </div>
+</div>-->

@@ -1,18 +1,23 @@
 <app-nav-bar></app-nav-bar>
 
 <div class="div-tasklist-container">
-    <h2>Tarefas</h2>
-    <hr>
-    <button class="btn-newtask" [routerLink]="['/new']">Nova Tarefa</button>
+    <div class="img-content">
+        <img src="./assets/home/Checklist-bro.svg">
+    </div>
+    <div class="tasklist-content">
+        <h2>Tarefas</h2>
+        <hr>
+        <button class="btn-newtask" [routerLink]="['/new']">Nova Tarefa</button>
 
-    <section>
-        <div *ngIf="tasklist.length == 0" class="div-alert-warning">
-            Nenhuma tarefa criada!
-        </div>
-        <ul class="list-group">
-            <li class="list-group-item" *ngFor="let task of tasklist">
-                <app-task-list-item [task]="task" class="list-item"></app-task-list-item>
-            </li>
-        </ul>
-    </section>
+        <section>
+            <div *ngIf="tasklist.length == 0" class="div-alert-warning">
+                Nenhuma tarefa criada!
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let task of tasklist">
+                    <app-task-list-item [task]="task" class="list-item"></app-task-list-item>
+                </li>
+            </ul>
+        </section>
+    </div>
 </div>
