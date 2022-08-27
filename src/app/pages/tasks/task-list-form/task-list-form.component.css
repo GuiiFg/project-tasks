@@ -1,8 +1,49 @@
 .task-form-container{
     padding: 20px;
+    font-family: Mali;
 }
 
 .textarea-input{
     width: calc(100% - 6px);
     margin-top: 5px;
+    font-family: Mali;
+}
+
+.btn-save{
+    height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: none;
+    background-color: #0a7ce7;
+    border-radius: 5px;
+    color: white;
+    font-family: Mali;
+    cursor: pointer;
+}
+.btn-save:hover{
+    opacity: 0.9;
+}
+
+.btn_cancel{
+    height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: none;
+    background-color: #ff0077;
+    border-radius: 5px;
+    color: white;
+    font-family: Mali;
+    cursor: pointer;
+}
+.btn_cancel:hover{
+    opacity: 0.9;
+}
+
+.div-button{
+    margin-right: 10px;
+}
+
+.div_btns{
+    margin-top: 10px;
+    display: flex;
 }

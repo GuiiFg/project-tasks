@@ -11,10 +11,18 @@
                 <br>
                 <textarea class="textarea-input" [(ngModel)]="task.description" name="description" rows="5"></textarea>
             </div>
-            <div>
-                <button type="submit">Salvar</button>
-                <button [routerLink]="['/']">Cancelar</button>
+            <div class="div_btns">
+                <div class="div-button">
+                    <button class="btn-save" type="submit">Salvar</button>
+                </div>
+                <div class="div-button">
+                    <button class="btn_cancel" [routerLink]="['/']">Cancelar</button>
+                </div>
             </div>
         </form>
     </section>
+    <br>
 </div>
+
+
+

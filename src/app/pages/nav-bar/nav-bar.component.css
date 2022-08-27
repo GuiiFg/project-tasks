@@ -16,6 +16,8 @@ h1{
         #0a7ce7,
         #19e4d3);
     margin: 0px;
+    font-family: Mali;
+    align-items: center;
 }
 
 .div-content{
@@ -26,4 +28,45 @@ h1{
     color: white;
     margin-left: 20px;
     margin-right: 20px;
+    justify-content: space-between;
+}
+
+.btn-sobre{
+    height: 30px;
+    min-width: 90px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: none;
+    background-color: #19a4e4;
+    border-radius: 20px;
+    color: white;
+    font-family: Mali;
+    cursor: pointer;
+}
+.btn-sobre:hover{
+    opacity: 0.9;
+}
+
+.bnt-sair{
+    height: 30px;
+    min-width: 90px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: none;
+    background-color: #ff0077;
+    border-radius: 20px;
+    color: white;
+    font-family: Mali;
+    cursor: pointer;
+}
+.bnt-sair:hover{
+    opacity: 0.9;
+}
+
+.div-navigation{
+    display: flex;
+}
+
+.div_btn{
+    margin-left: 20px;
 }
