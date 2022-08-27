@@ -49,6 +49,14 @@ export class CreateAccontComponent implements OnInit {
       this.msgAlert += "Senhas diferentes! "
       dataok = false;
     }
+    if(this.email == ""){
+      this.msgAlert += "Email não pode estar vazio!\n"
+      dataok = false;
+    }
+    if(this.senha == ""){
+      this.msgAlert += "Senha não pode estar vazia!\n"
+      dataok = false;
+    }
 
     return dataok;
   }
