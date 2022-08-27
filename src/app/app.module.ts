@@ -10,7 +10,7 @@ import { TaskListFormComponent } from './pages/tasks/task-list-form/task-list-fo
 import { NavBarComponent } from './pages/nav-bar/nav-bar.component';
 import { FormsModule } from '@angular/forms';
 import { CreateAccontComponent } from './pages/create-accont/create-accont.component';
-import { AuthService } from './helpers/auth.service';
+import { AuthService } from './services/auth/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 

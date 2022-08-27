@@ -14,6 +14,10 @@
                 <input type="password" placeholder="senha" [(ngModel)]="user.senha"  name="senha">
                 <br>
                 <br>
+                <div *ngIf="msgloginError" class="div-alert">
+                    <p>Email ou senha errado!</p>
+                    <p>Caso não tenha uma conta, criei em Cadatrar-se</p>
+                </div>
                 <button type="submit">Entrar</button>
                 <button [routerLink]="['/register']">Cadatrar-se</button>
             </form>

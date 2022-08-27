@@ -11,13 +11,16 @@
                 <p class="input-title">Email</p>
                 <input type="email" placeholder="email" [(ngModel)]="email" name="email">
                 <p class="input-title">Confirmar email</p>
-                <input type="email" placeholder="email" [(ngModel)]="confirmaEmail" name="email">
+                <input type="email" placeholder="email" [(ngModel)]="confirmaEmail" name="confirmaemail">
                 <p class="input-title">Senha</p>
                 <input type="password" placeholder="senha" [(ngModel)]="senha"  name="senha">
                 <p class="input-title">Confirmar senha</p>
-                <input type="password" placeholder="senha" [(ngModel)]="confirmaSenha"  name="senha">
+                <input type="password" placeholder="senha" [(ngModel)]="confirmaSenha"  name="confirmasenha">
                 <br>
                 <br>
+                <div *ngIf="msgAlert != ''" class="div-alert">
+                    <p>{{ msgAlert }}</p>
+                </div>
                 <button type="submit">Criar conta</button>
                 <button [routerLink]="['/login']">Já tenho uma conta</button>
             </form>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/helpers/auth.service';
+import { AuthService } from 'src/app/services/auth/auth.service';
 import { UserModel } from 'src/app/models';
 
 @Component({
@@ -11,6 +11,7 @@ import { UserModel } from 'src/app/models';
 export class LoginComponent implements OnInit {
 
   user: UserModel = new UserModel;
+  msgloginError: boolean = false;
 
   constructor(
     private router: Router,
@@ -28,6 +29,8 @@ export class LoginComponent implements OnInit {
 
     if(loggedOk){
       this.router.navigate([''])
+    }else{
+      this.msgloginError = true;
     }
   }
 
