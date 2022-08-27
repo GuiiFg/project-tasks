@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserModel } from 'src/app/models/users/user';
 import { AuthService } from 'src/app/services/auth/auth.service';
-import { UserModel } from 'src/app/models';
 
 @Component({
   selector: 'app-login',
@@ -21,11 +21,11 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit(){
+  async onSubmit(){
     this.authService.currentUser.email = this.user.email;
     this.authService.currentUser.senha = this.user.senha;
 
-    const loggedOk = this.authService.loginCurrentUser();
+    const loggedOk = await this.authService.loginCurrentUser();
 
     if(loggedOk){
       this.router.navigate([''])

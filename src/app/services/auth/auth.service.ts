@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { UserModel } from '../../models';
 import { HttpClient } from '@angular/common/http'
-import { ResponseLogin } from '../../models/response-login';
-import { Md5 } from  'ts-md5';
+import { ResponseLogin } from '../../models/users/response-login';
+import { UserModel } from 'src/app/models/users/user';
+import { UserService } from '../users/user.service';
 
 @Injectable({
   providedIn: 'root'
@@ -16,22 +16,16 @@ export class AuthService {
 
   constructor(
     private http: HttpClient,
+    private userService: UserService,
   ) { }
 
-  loginCurrentUser(){
+  async loginCurrentUser(){
 
-    const urlComplet = this.urlApi + "api/Users/login/"
-
-    const postData = {
-      email: this.currentUser.email,
-      senha: Md5.hashStr(this.currentUser.senha)
+    const result = await this.userService.loginUser(this.currentUser.email, this.currentUser.senha)
+    
+    if(result){
+      this.responseLogin = result
     }
-
-    this.http.post(urlComplet, postData).toPromise().then((response:any) => {
-      this.responseLogin.statusCode = response.statusCode;
-      this.responseLogin.msg = response.msg;
-      this.responseLogin.userId = response.userId;
-    })
 
     if(this.responseLogin.statusCode == 200){
       this.currentUser.id = this.responseLogin.userId;

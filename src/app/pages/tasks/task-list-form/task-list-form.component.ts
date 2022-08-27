@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { TaskModel } from '../shared/task-model';
-import { TaskService } from '../shared/task.service';
+import { TaskModel } from '../../../models/tasks/task-model';
+import { TaskService } from '../../../services/tasks/task.service';
 
 @Component({
   selector: 'app-task-list-form',

@@ -1,6 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ResponseCreateUser } from '../models/response-create-user';
+import { Observable, take } from 'rxjs';
+import { ResponseLogin } from 'src/app/models/users/response-login';
+import { Md5 } from 'ts-md5';
+import { ResponseCreateUser } from '../../models/users/response-create-user';
 
 @Injectable({
   providedIn: 'root'
@@ -28,5 +31,17 @@ export class UserService {
     })
 
     return this.response;
+  }
+
+  loginUser(email: string, senha :string) {
+
+    const postData = {
+      email: email,
+      senha: Md5.hashStr(senha)
+    }
+
+    const urlComplet = this.urlApi + "/login";
+
+    return this.http.post<ResponseLogin>(urlComplet, postData).toPromise()
   }
 }

@@ -1,9 +1,9 @@
 
-<div [innerHTML]="task.description" class="task-item-desc"
-    [ngClass]="task.done ? 'task-done' : ''">
+<div [innerHTML]="task.description_str" class="task-item-desc"
+    [ngClass]="task.done_bool ? 'task-done' : ''">
 </div>
 <div>
-    <button class="btn-alterar" [routerLink]="['/edit', task.id]">Alterar</button>
+    <button class="btn-alterar" [routerLink]="['/edit', task.id_task_int]">Alterar</button>
 </div>
 <div>
     <button class="btn-remover" (click)="removeItem()">Excluir</button>

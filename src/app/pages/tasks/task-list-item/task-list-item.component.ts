@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { TaskModel } from '../shared/task-model';
-import { TaskService } from '../shared/task.service';
+import { TaskModel } from '../../../models/tasks/task-model';
+import { TaskService } from '../../../services/tasks/task.service';
 
 @Component({
   selector: 'app-task-list-item',
@@ -19,7 +19,7 @@ export class TaskListItemComponent implements OnInit {
   }
 
   removeItem(){
-    this.taskService.deleteTask(this.task.id)
+    this.taskService.deleteTask(this.task.id_task_int)
   }
 
 }
