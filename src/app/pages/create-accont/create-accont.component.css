@@ -1,0 +1,76 @@
+
+input{
+    height: 30px;
+    width: 300px;
+    padding: 5px;
+    padding-left: 10px;
+    font-family: Mali;
+}
+
+button{
+    height: 40px;
+    color: white;
+    background-color: #0077ff;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: Mali;
+}
+
+h1{
+    color: #0077ff;
+}
+
+button:hover{
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+img{
+    max-height: 50%;
+}
+
+.section-content-img{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    font-family: Mali;
+    padding-right: 20px;
+}
+
+.section-content-form{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    padding-left: 20px;
+    justify-content: left;
+    align-items: center;
+    font-family: Mali;
+}
+
+.div-content{
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.register-container{
+    height: 100%;
+    width: 100%;
+}
+
+.div-form{
+    border-style: none;
+    height: fit-content;
+    padding: 20px;
+    font-family: Mali;
+}
+
+.input-title{
+    font-size: large;
+    margin-bottom: 2px;
+}

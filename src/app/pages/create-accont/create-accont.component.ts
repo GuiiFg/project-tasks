@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateAccontComponent implements OnInit {
 
+  email : string = "";
+  confirmaEmail : string = "";
+  senha : string = "";
+  confirmaSenha : string = "";
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(){
+
   }
 
 }

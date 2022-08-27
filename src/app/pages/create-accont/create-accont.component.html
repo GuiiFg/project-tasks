@@ -1,1 +1,27 @@
-<p>create-accont works!</p>
+
+<div class="register-container">
+    <section class="div-content">
+        <div class="section-content-img">
+            <img src="./assets/login/Computer login-bro.svg">
+        </div>
+        <div class="section-content-form">
+            <form (ngSubmit)="onSubmit()" #formRegister="ngForm">
+                <h1>My Tasks</h1>
+                <h3>Cadastrar-se</h3>
+                <p class="input-title">Email</p>
+                <input type="email" placeholder="email" [(ngModel)]="email" name="email">
+                <p class="input-title">Confirmar email</p>
+                <input type="email" placeholder="email" [(ngModel)]="confirmaEmail" name="email">
+                <p class="input-title">Senha</p>
+                <input type="password" placeholder="senha" [(ngModel)]="senha"  name="senha">
+                <p class="input-title">Confirmar senha</p>
+                <input type="password" placeholder="senha" [(ngModel)]="confirmaSenha"  name="senha">
+                <br>
+                <br>
+                <button type="submit">Criar conta</button>
+                <button [routerLink]="['/login']">Já tenho uma conta</button>
+            </form>
+        </div>
+    </section>
+</div>
+
