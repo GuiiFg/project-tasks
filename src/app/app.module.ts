@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { CreateAccontComponent } from './pages/create-accont/create-accont.component';
 import { AuthService } from './helpers/auth.service';
 import { HttpClientModule } from '@angular/common/http';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     TaskListItemComponent,
     TaskListFormComponent,
     NavBarComponent,
-    CreateAccontComponent
+    CreateAccontComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,

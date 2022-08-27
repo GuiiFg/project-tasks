@@ -89,6 +89,7 @@
               "src/favicon.ico",
               "src/assets",
               "src/assets/fonts/*",
+              "src/assets/about-us/*",
               "src/assets/home/*",
               "src/assets/login/*"
             ],
