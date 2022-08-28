@@ -3,7 +3,7 @@
     [ngClass]="task.done_bool ? 'task-done' : ''">
 </div>
 <div>
-    <button class="btn-alterar" [routerLink]="['/edit', task.id_task_int]">Alterar</button>
+    <button class="btn-alterar" (click)="aterarItem()">Alterar</button>
 </div>
 <div>
     <button class="btn-remover" (click)="removeItem()">Excluir</button>

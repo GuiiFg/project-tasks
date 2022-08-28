@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { Router } from '@angular/router';
+import { TaskService } from 'src/app/services/tasks/task.service';
 import { TaskModel } from '../../../models/tasks/task-model';
-import { TaskService } from '../../../services/tasks/task.service';
 
 @Component({
   selector: 'app-task-list',
@@ -18,15 +18,9 @@ export class TaskListComponent implements OnInit {
     ) { }
 
   async ngOnInit() {
-    this.router.events.subscribe(event => {
-      if (event instanceof NavigationEnd) {
-          console.log('navegação terminou');
-      }
-    });
-    
     const result = await this.taskService.getAll();
     if(result){
-      this.tasklist = result;
+      this.tasklist =  result;
     }
   }
 

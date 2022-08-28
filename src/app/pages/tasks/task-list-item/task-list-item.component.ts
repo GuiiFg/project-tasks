@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { TaskService } from 'src/app/services/tasks/task.service';
 import { TaskModel } from '../../../models/tasks/task-model';
-import { TaskService } from '../../../services/tasks/task.service';
 
 @Component({
   selector: 'app-task-list-item',
@@ -12,14 +13,20 @@ export class TaskListItemComponent implements OnInit {
   task!: TaskModel;
 
   constructor(
-    private taskService: TaskService
+    private taskService: TaskService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
   }
 
-  async removeItem(){
-    await this.taskService.deleteTask(this.task.id_task_int)
+  removeItem(){
+    this.taskService.deleteTarefa(this.task.id_task_int)
+  }
+
+  aterarItem(){
+    console.log("editar")
+    this.router.navigate(['/edit/' + this.task.id_task_int])
   }
 
 }

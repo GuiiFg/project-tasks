@@ -24,8 +24,17 @@ export class TaskService {
     private http : HttpClient
   ) { }
   
-  getAll(){
-    console.log("entrei")
+  async getAll(){
+    
+    const result = await this.getTasks();
+    if(result){
+      this.tasks = result;
+    }
+
+    return this.tasks;
+  }
+
+  getTasks(){
     return this.http.get<TaskModel[]>(this.urlApi + "/" + this.authService.currentUser.id).toPromise()
   }
 
@@ -40,12 +49,7 @@ export class TaskService {
 
   async saveTask(task: TaskModel){
 
-    const result = await this.getAll();
-    if(result){
-      this.tasks = result;
-    }
-
-    console.log(this.tasks)
+    this.getAll()
 
     if(task.id_task_int){
       const taskToUpdate = this.getById(task.id_task_int);
@@ -68,10 +72,21 @@ export class TaskService {
 
       const result = await this.taskCreate(request)
     }
+
+    this.getAll()
   }
 
   taskCreate(request : RequestCreateTask){
     return this.http.post(this.urlApi + "/createTask", request).toPromise()
+  }
+
+  async deleteTarefa(id: number){
+    await this.deleteTask(id)
+    const taskToUpdate = this.getById(id);
+    if (taskToUpdate){
+      const index = this.tasks.indexOf(taskToUpdate)
+      this.tasks.splice(index, 1)
+    }
   }
 
   deleteTask(id: number){
