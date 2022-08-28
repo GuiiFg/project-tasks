@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TaskModel } from '../../../models/tasks/task-model';
 import { TaskService } from '../../../services/tasks/task.service';
+import { TaskListComponent } from '../task-list/task-list.component';
 
 @Component({
   selector: 'app-task-list-form',
@@ -22,6 +23,7 @@ export class TaskListFormComponent implements OnInit {
   ngOnInit(): void {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
     if (id){
+      console.log("entrei aki")
       const oldtask = this.taskService.getById(parseInt(id));
       if (oldtask != undefined){
         this.task = oldtask
@@ -32,7 +34,7 @@ export class TaskListFormComponent implements OnInit {
 
   onSubmit(){
     this.taskService.saveTask(this.task)
-    this.router.navigate([''])
+    this.router.navigate(['/1'])
   }
 
 }

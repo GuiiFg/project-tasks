@@ -18,8 +18,8 @@ export class TaskListItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  removeItem(){
-    this.taskService.deleteTask(this.task.id_task_int)
+  async removeItem(){
+    await this.taskService.deleteTask(this.task.id_task_int)
   }
 
 }

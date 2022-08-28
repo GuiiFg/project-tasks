@@ -22,18 +22,20 @@ export class CreateAccontComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit(){
+  async onSubmit(){
     const validated = this.validadeData()
 
     if(validated){
       const senhaMd5 = Md5.hashStr(this.senha)
-      const response = this.userService.createUser(this.email, senhaMd5)
+      const response = await this.userService.createUser(this.email, senhaMd5)
 
-      if(response.statusCode == 200){
-        this.msgAlert = "Conta criada! Retorne para tela de login e aproveite!"
-      }
-      if(response.statusCode == 400){
-        this.msgAlert = "Erro ao criar conta! Tente outro email!"
+      if (response){
+        if(response.statusCode == 200){
+          this.msgAlert = "Conta criada! Retorne para tela de login e aproveite!"
+        }
+        if(response.statusCode == 400){
+          this.msgAlert = "Erro ao criar conta! Tente outro email!"
+        }
       }
     }
   }

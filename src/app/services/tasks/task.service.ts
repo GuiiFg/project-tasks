@@ -3,7 +3,10 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { GetTaskResponse } from 'src/app/models/tasks/get-task-response';
+import { RequestCreateTask } from 'src/app/models/tasks/request-create-task';
+import { RequestUpdateTask } from 'src/app/models/tasks/request-update-task';
 import { ResponseLogin } from 'src/app/models/users/response-login';
+import { TaskListComponent } from 'src/app/pages/tasks/task-list/task-list.component';
 import { TaskModel } from '../../models/tasks/task-model';
 import { AuthService } from '../auth/auth.service';
 
@@ -14,23 +17,20 @@ export class TaskService {
 
   urlApi : string = "https://localhost:7230/api/Tasks"
 
-  tasks: TaskModel[] = [
-    {id_task_int:1, description_str: 'Tarefa 1', done_bool:false},
-    {id_task_int:2, description_str: 'Tarefa 2', done_bool:true},
-    {id_task_int:3, description_str: 'Tarefa 3', done_bool:false},
-    {id_task_int:4, description_str: 'Tarefa 4', done_bool:true},
-    {id_task_int:5, description_str: 'Tarefa 5', done_bool:false},
-    {id_task_int:6, description_str: 'Tarefa 6', done_bool:false},
-    {id_task_int:7, description_str: 'Tarefa 7', done_bool:false},
-  ]
+  tasks: TaskModel[] = [];
 
   constructor(
     private authService : AuthService,
     private http : HttpClient
   ) { }
   
-  getAll() : Observable<TaskModel[]>{
-    return this.http.get<TaskModel[]>(this.urlApi + "/" + this.authService.currentUser.id)
+  getAll(){
+    console.log("entrei")
+    return this.http.get<TaskModel[]>(this.urlApi + "/" + this.authService.currentUser.id).toPromise()
+  }
+
+  taskUpdate(request : RequestUpdateTask){
+    return this.http.put(this.urlApi + "/updateTaks", request).toPromise()
   }
 
   getById(id: number){
@@ -38,27 +38,43 @@ export class TaskService {
     return task;
   }
 
-  saveTask(task: TaskModel){
+  async saveTask(task: TaskModel){
+
+    const result = await this.getAll();
+    if(result){
+      this.tasks = result;
+    }
+
+    console.log(this.tasks)
+
     if(task.id_task_int){
       const taskToUpdate = this.getById(task.id_task_int);
       if(taskToUpdate != undefined){
-        taskToUpdate.description_str = task.description_str;
-        taskToUpdate.done_bool = task.done_bool;
+
+        let request = new RequestUpdateTask;
+        request.descreption = task.description_str;
+        request.done = task.done_bool;
+        request.task_id = taskToUpdate.id_task_int;
+
+        const result = await this.taskUpdate(request)
       }
     }else{
       task.done_bool = false;
-      if(this.tasks.length != 0){
-        const lastId = this.tasks[this.tasks.length - 1].id_task_int
-        task.id_task_int = lastId + 1;
-      }else{
-        task.id_task_int = 1
-      }
-      this.tasks.push(task);
+      
+      let request = new RequestCreateTask;
+      request.description = task.description_str;
+      request.done = task.done_bool; 
+      request.id_user = this.authService.currentUser.id
+
+      const result = await this.taskCreate(request)
     }
   }
 
+  taskCreate(request : RequestCreateTask){
+    return this.http.post(this.urlApi + "/createTask", request).toPromise()
+  }
+
   deleteTask(id: number){
-    const taskIndex = this.tasks.findIndex((value) => value.id_task_int == id);
-    this.tasks.splice(taskIndex, 1);
+    return  this.http.delete(this.urlApi + "/delete/" + id).toPromise()
   }
 }

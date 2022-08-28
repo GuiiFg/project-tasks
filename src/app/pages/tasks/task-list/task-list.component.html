@@ -8,6 +8,7 @@
         <h2>Tarefas</h2>
         <hr>
         <button class="btn-newtask" [routerLink]="['/new']">Nova Tarefa</button>
+        <button class="btn-newtask" (click)="updateList()">Atualizar</button>
 
         <section>
             <div *ngIf="tasklist.length == 0" class="div-alert-warning">

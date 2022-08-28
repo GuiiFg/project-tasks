@@ -24,13 +24,7 @@ export class UserService {
         senha: senha
     }
 
-    this.http.post(urlComplet, postData).toPromise().then((response:any) => {
-      this.response.createdBit = response.createdBit;
-      this.response.msg = response.msg;
-      this.response.statusCode = response.statusCode;
-    })
-
-    return this.response;
+    return this.http.post<ResponseCreateUser>(urlComplet, postData).toPromise()
   }
 
   loginUser(email: string, senha :string) {
